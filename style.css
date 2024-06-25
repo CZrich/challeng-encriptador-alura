@@ -1,0 +1,71 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.body{
+    background-color: aliceblue;
+    box-sizing: border-box;
+}
+.header__barra{
+    background-color: blue;
+    height: auto;
+}
+.contenido{
+    display: flex;
+    
+    justify-content: space-between;
+    background-color: #E9ECF8;
+    height: auto;
+    margin: 20px;
+}
+.contenido__section{
+    display: flex;
+    flex-direction: column;
+}
+.contenido__no_mensaje{
+    color: #343A40;
+    font-size: 1.5rem;
+}
+.contenido__ayuda{
+    font-size: 1rem;
+    color: #495057;
+}
+.boton__encriptar{
+ background-color: #0A3871;
+ border-radius: 10px;
+ padding: 10px;
+ width: 328px;
+ color: white;
+}
+.boton__desencriptar{
+    background-color: azure;
+    border-radius: 10px;
+    width: 328px;
+    padding: 10px;
+}
+#inputTexto{
+    width: auto;
+    height: 944px;
+    background-color:white;
+    resize: none;
+  
+    border-radius: 10px;
+
+}
+.contenido__mensaje_encriptado{
+    width: 400px;
+    height: 944px;
+    background-color:#FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 32px;
+
+}
+
+.footer{
+    background-color: aqua;
+    height: auto;
+}
