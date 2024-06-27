@@ -1,5 +1,8 @@
 let hola = "hola mundo";
+let regex =/^[a-z\s]+$/
 
+estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
+estadoRenderizarElemento('bonton__copiar', 'none');
 function limpiarInput(id) {
   document.getElementById(id).value = "";
 }
@@ -10,40 +13,83 @@ function estadoRenderizarElemento(id, estado) {
   document.getElementById(id).style.display = estado;
 }
 function optenerInput(id) {
-  return document.getElementById(id).value;
+
+  let mensage = document.getElementById(id).value;
+  return mensage;
 }
 function setTextToHTML(id, texto) {
-  document.getElementById(id).innerText = texto;
+  document.getElementById(id).value = texto;
 }
 function encriptarMensaje() {
   let mensage = optenerInput('inputTexto');
-  mensage = encritador(mensage);
-  limpiarInput('inputTexto');
+  if (mensage.length) {
+    limpiarInput('inputTexto');
+    if(regex.test(mensage)){
+    mensage = encritador(mensage);
+   
+    
+    estadoRenderizarElemento('contenido__encriptado__parrafo','block')
 
-  setTextToHTML('parrafo__encriptado', mensage);
-  estadoRenderizarElemento('imagen', 'none');
-  estadoVisibleElemento('bonton__copiar', 'visible');
+    setTextToHTML('contenido__encriptado__parrafo', mensage);
+    estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+    estadoRenderizarElemento('contenido__encriptado_mensaje','none')
+    estadoRenderizarElemento('bonton__copiar', 'block');
+    //estadoVisibleElemento('bonton__copiar', 'visible');
+    }else{
+      alert("ingrese solo minusculas y sin acentos")
+    }
+  } else {
+    estadoRenderizarElemento('contenido__encriptado__parrafo','none');
+    estadoRenderizarElemento('bonton__copiar', 'none');
+    estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    estadoRenderizarElemento('contenido__encriptado_mensaje','block')
+    
+  }
+
+
 }
 
 function desencriptarMensaje() {
   let mensage = optenerInput('inputTexto');
-  limpiarInput('inputTexto');
-  mensage = desencriptar(mensage);
-  setTextToHTML('parrafo__encriptado', mensage);
+  if (mensage.length) {
+
+    limpiarInput('inputTexto');
+    if(regex.test(mensage)){
+    mensage = desencriptar(mensage);
+   // estadoRenderizarElemento('contenido__encriptado_parrafo', 'block')
+    setTextToHTML('contenido__encriptado__parrafo', mensage);
+    estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+    estadoRenderizarElemento('contenido__encriptado_mensaje','none')
+    }else{
+      alert("ingrese solo minusculas y sin acentos");
+    }
+  } else {
+    estadoRenderizarElemento('contenido__encriptado__parrafo','none');
+    estadoRenderizarElemento('bonton__copiar', 'none');
+    estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    estadoRenderizarElemento('contenido__encriptado_mensaje','block')
+   // estadoVisibleElemento('bonton__copiar', 'hidden');
+  }
 }
-function copiar(){
- 
-    // Obtener el contenido del elemento
-    var content = document.getElementById("parrafo__encriptado").innerText;
-  
-    // Usar la API de Portapapeles para copiar el contenido
-    navigator.clipboard.writeText(content).then(function() {
-      console.log("first")
-    }).catch(function(error) {
-      alert("Error al copiar el contenido: " + error);
-    });
-  
+function copiar() {
+
+  // Obtener el contenido del elemento
+  var content = document.getElementById("contenido__encriptado__parrafo").value;
+
+  // Usar la API de Portapapeles para copiar el contenido
+  navigator.clipboard.writeText(content).then(function () {
+    console.log("first")
+  }).catch(function (error) {
+    alert("Error al copiar el contenido: " + error);
+  });
+
 }
+
+
+
+
+
+
 
 function encritador(inputmgs) {
 
@@ -52,7 +98,7 @@ function encritador(inputmgs) {
   for (let i = 0; i < mensage.length; i++) {
     switch (mensage[i]) {
       case "e"://enter
-        mensage
+        mensage[i] = "enter";
         break;
       case "i"://imes
         mensage[i] = "imes";
@@ -75,6 +121,7 @@ function encritador(inputmgs) {
 
 
 function desencriptar(msg) {
+
   let mensage = msg.split('');
 
   for (let i = 0; i < mensage.length; i++) {

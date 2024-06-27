@@ -1,56 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <header class="header__barra">
+            <img src="assets/Logo.jpg" alt="logo alura" style="border-radius: 50px;">
+            <h1>  LURA LATAM</h1>
+        </header>
+        <main class="contenido">
+            <section class="contenido__input">
+    
+                <textarea placeholder="Ingrese texto aqui" name="inputTexto" id="inputTexto"></textarea>
+    
+                <p id="contenido__input__recomendacion"> 
+                    <img src="assets/Group.jpg " alt="simbolo" class="contenido__img_recomendacion"> 
+                    Solo letras minúsculas y sin acentos
+                </p>
+    
+                <div class="contenido__input__botones">
+    
+                    <button class="contenido__boton__encriptar" onclick="encriptarMensaje()">
+                        Encriptar
+                    </button>
+    
+                    <button class="contenido__boton__desencriptar" onclick="desencriptarMensaje()">
+                        desencriptar
+                    </button>
+    
+                </div>
+    
+    
+            </section>
+    
+            <div class="contenido__encriptado">
+            <!--<p id="parrafo__encriptado"></p>            -->
+               <textarea  id="contenido__encriptado__parrafo" readonly="true"></textarea>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+                <img id="contenido__encriptado__imagen" src="assets/Muñeco.jpg" alt="no hay texto">
+                <article id="contenido__encriptado_mensaje">
+                    <h2 class="contenido__no_mensaje">Ningun mensajese fue encontrado</h2>
+                    <p class="contenido__ayuda">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </article>
+               
 
-<body>
-    <header class="header__barra">
-
-        <h1> <img src="assets/Logo.jpg" alt="logo alura"> Hola Mundo este es mi encriptador</h1>
-    </header>
-    <main class="contenido">
-        <section class="contenido__section">
-
-            <textarea placeholder="Ingrese texto aqui" name="inputTexto" id="inputTexto"></textarea>
-            <p class="ss"> <img src="assets/Group.jpg " alt="simbolo"> ingrese minusculas sin acentos</p>
-            <div class="contenido_botones">
-                <button class="boton__encriptar" onclick="encriptarMensaje()">encriptar</button>
-                <button class="boton__desencriptar" onclick="desencriptarMensaje()">desencriptar</button>
-            </div>
-
-
-        </section>
-        <div class="contenido__mensaje_encriptado">
-            <p id="parrafo__encriptado"></p>
-            <img id="imagen" src="assets/Muñeco.jpg" alt="no hay texto">
-            <h2 class="contenido__no_mensaje">Ningun mensajese fue encontrado</h2>
-            <p class="contenido__ayuda">Ingresa el texto que desees encriptar o desencriptar.</p>
-            <button id="bonton__copiar" style="visibility: hidden" onclick="copiar()" >Copiar</button>
-         </div>
-
-
-    </main>
-    <footer class="footer">
-        <h3>
-            Todos los derecchos reservados ©2024
-        </h3>
-    </footer>
+                <button id="bonton__copiar" onclick="copiar()" >Copiar</button>
+             </div>
+    
+    
+        </main>
+    
+        <footer class="footer">
+    
+            <h3>
+                Todos los derecchos reservados ©2024
+            </h3>
+    
+        </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+           
+         <script src="app.js"></script>
+    
+    
+     </body>
+    
 
 
-
-
-
-
-
-
-    <script src="app.js"></script>
-
-
-</body>
 
 </html>
