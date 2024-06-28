@@ -1,26 +1,56 @@
+
+/*@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Playwrite+DE+Grund&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+:root {
+    --color-primario:#001845;
+    --color-secundario:#0466C8;
+    --color-terciario: #FFFFFF;
+    --color-cuaternario:#D8DFE8;
+    --color-hover: #12ccda;
+    --color-hover-boton:#002855;
+    --color-negro:#272727;
+    --fuente-playwrite:"Playwrite DE Grund", sans-serif;
+    --fuente-almaria:  "Almarai", sans-serif;
+    --fuente-concert:"Concert One", sans-serif;
+    
+}
 *{
     margin: 0px;
     padding: 0px;
 }
+
 .body{
-    background-color: aliceblue;
+    background-color:var(--color-secundario);
     box-sizing: border-box;
    
 }
 .header__barra{
     display: flex;
-    background-color: #0A3871;
+    background-color:var(--color-primario);
     align-items: center;
-    height: 60px;
-   color: white;
+    justify-content: center;
+     color:var(--color-terciario);
    
 }
+.header__barra img{
+  margin: 1.5%;
+}
+.header__barra h1{
+    font-family: var(--fuente-playwrite);
+    font-size: 3rem;
+    font-weight: 600;
+    font-size: normal;
+  
+     place-items: center;
+    
+}
+
 .contenido{
     display: flex;
     justify-content: center;
-    background-color: #E9ECF8;
-
-    margin: 10px;
+    background-color:var(--color-terciario);
+    margin:2% 0 3% 0; 
     
 }
 .contenido__input{
@@ -29,12 +59,14 @@
     margin-right: 2%;
     width: 688px;
     height: 840px;
-    background-color: #79cc0c;
+ 
 }
 .contenido__no_mensaje{
-    color: #343A40;
+    color:var(--color-primario);
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 12px;
+    font-family: var(--fuente-concert);
 
 }
 .contenido__ayuda{
@@ -42,6 +74,7 @@
     color: #495057;
     font-weight: bold;
     text-align: center;
+    font-family: var(--fuente-concert);
 }
 /*
 *estilos para los botones
@@ -49,29 +82,46 @@
 .contenido__input__botones{
     display: flex;
     justify-content: space-between;
-    background-color: #E9ECF8;
-    margin: 10px 0px;
+    
+    margin-top: 4px;
+    
 
 }
 .contenido__boton__encriptar{
- background-color: #0A3871;
+ background-color:var(--color-secundario);
  border-radius: 24px;
- padding: 24px;
+ padding: 16px;
  width: 328px;
- color: #FFFFFF;
- font-size: 1rem;
+ 
+ color:var(--color-terciario);
+ font-size: 1.5rem;
  border: 0;
-
+ font-weight: 400;
+ font-family: var(--fuente-playwrite);
+ font-weight: 800;
 
 }
+.contenido__boton__encriptar:hover{
+ background-color: var(--color-hover-boton);
+}
 .contenido__boton__desencriptar{
-    background-color: azure;
+    background-color:var(--color-secundario);
     border-radius: 24px;
     width: 328px;
-    padding: 24px;
-    border: 2px solid;
-    font-size: 1rem;
-    border-color: #0A3871;
+    padding: 16px;
+    font-size: 1.5rem;
+    border: 0;
+    font-weight: 400;
+    font-family: var(--fuente-playwrite);
+    text-align: center;
+    place-items: center;
+    color: var(--color-terciario);
+    font-weight: 800;
+    
+
+}
+.contenido__boton__desencriptar:hover{
+    background-color: var(--color-hover-boton);
 }
 
 /*
@@ -90,6 +140,8 @@
     width: 680px;
     outline: none;
     overflow-y: auto;
+    font-weight: 400;
+    font-family: var(--fuente-playwrite);
 
 }
 
@@ -101,18 +153,25 @@
     height: 781px;
     margin: 30px;
     resize: none;
-    color: #495057;
-    background-color: aqua;
+    color:var(--color-secundario);
+    background-color:var(--color-terciario);
+    font-family: var(--fuente-playwrite);
   
 }
 #bonton__copiar{
-    background-color: azure;
+    background-color:var(--color-secundario);
     border-radius: 24px;
     width: 328px;
-    padding: 24px;
-    border: 2px solid;
-    border-color: #0A3871;
-    margin: 30px;
+    padding: 16px;
+    border: 0;
+    font-size: 1.5rem;
+    margin: 20px ;
+    font-family: var(--fuente-playwrite);
+    color:var(--color-terciario);
+    font-weight: 800;
+}
+#bonton__copiar:hover{
+    background-color: var(--color-hover-boton);
 }
 #inputTexto::placeholder{
     color: #0A3871;
@@ -123,37 +182,97 @@
     color: #495057;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 10px;
+   font-weight: 800;
    
   
 }
 .contenido__img_recomendacion{
     margin: 0 8px 0 0;
+   
 }
 .contenido__encriptado{
     width: 400px;
     height: 860px;
-    background-color:#FFFFFF;
+    background-color:var(--color-terciario);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--color-primario) 0px 5px 15px;
     border-radius: 32px;
     margin-left: 2%;
 
 }
 #contenido__encriptado_mensaje{
-  
-   
     gap:8px;
     width: 336px;
-    background-color: #51d867;
+    background-color: var(--color-terciario);
 }
 #contenido__encriptado__imagen{
+    border-radius: 32px;
     margin-bottom: 30px;
 }
 
-.footer{
-    background-color: #0A3871;
-    height:50px;
+/*
+* estilos del footer
+*/
+.contenido__footer{
+    display: flex;
+    flex-direction: column;
+    background-color:var(--color-primario);
+     gap: 1%;
+    justify-content: center;
+   
+}
+.contenido__footer h3{
+    font-family: var(--fuente-playwrite);
+     font-size: 1rem;
+     color:var(--color-terciario);
+     text-align: center;
+     margin-top:4%;
+}
+.contenido__footer__enlaces a{
+    text-decoration: none;
+    font-family: var(--fuente-almaria);
+    color:var(--color-terciario);
+    font-weight: 800;
+
+
+}
+.contenido__footer__enlaces a:hover{
+    color: var(--color-hover);
+}
+.contenido__footer__enlaces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+.contenido__footer__enlaces h4{
+    font-family: var(--fuente-playwrite);
+    color: var(--color-terciario);
+  
+
+}
+.footer__icono{
+    margin-right: 4%;
+}
+.footer__enlace{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding: 2%;
+    
+}
+.fuente__codigo{
+    margin: 4%;
+    width: 10%;
+}
+.enlace__redes{
+    
+    margin: 4%;
+    width: 10%;
 }

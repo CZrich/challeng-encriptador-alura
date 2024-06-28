@@ -1,5 +1,5 @@
 let hola = "hola mundo";
-let regex =/^[a-z\s]+$/
+let regex = /^[a-z\s]+$/
 
 estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
 estadoRenderizarElemento('bonton__copiar', 'none');
@@ -24,26 +24,26 @@ function encriptarMensaje() {
   let mensage = optenerInput('inputTexto');
   if (mensage.length) {
     limpiarInput('inputTexto');
-    if(regex.test(mensage)){
-    mensage = encritador(mensage);
-   
-    
-    estadoRenderizarElemento('contenido__encriptado__parrafo','block')
+    if (regex.test(mensage)) {
+      mensage = encritador(mensage);
 
-    setTextToHTML('contenido__encriptado__parrafo', mensage);
-    estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
-    estadoRenderizarElemento('contenido__encriptado_mensaje','none')
-    estadoRenderizarElemento('bonton__copiar', 'block');
-    //estadoVisibleElemento('bonton__copiar', 'visible');
-    }else{
+
+      estadoRenderizarElemento('contenido__encriptado__parrafo', 'block')
+
+      setTextToHTML('contenido__encriptado__parrafo', mensage);
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+      estadoRenderizarElemento('contenido__encriptado_mensaje', 'none')
+      estadoRenderizarElemento('bonton__copiar', 'block');
+      //estadoVisibleElemento('bonton__copiar', 'visible');
+    } else {
       alert("ingrese solo minusculas y sin acentos")
     }
   } else {
-    estadoRenderizarElemento('contenido__encriptado__parrafo','none');
+    estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
     estadoRenderizarElemento('bonton__copiar', 'none');
     estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
-    estadoRenderizarElemento('contenido__encriptado_mensaje','block')
-    
+    estadoRenderizarElemento('contenido__encriptado_mensaje', 'block')
+
   }
 
 
@@ -54,21 +54,23 @@ function desencriptarMensaje() {
   if (mensage.length) {
 
     limpiarInput('inputTexto');
-    if(regex.test(mensage)){
-    mensage = desencriptar(mensage);
-   // estadoRenderizarElemento('contenido__encriptado_parrafo', 'block')
-    setTextToHTML('contenido__encriptado__parrafo', mensage);
-    estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
-    estadoRenderizarElemento('contenido__encriptado_mensaje','none')
-    }else{
+    if (regex.test(mensage)) {
+      mensage = desencriptar(mensage);
+      // estadoRenderizarElemento('contenido__encriptado_parrafo', 'block')
+      estadoRenderizarElemento('contenido__encriptado__parrafo', 'block')
+      setTextToHTML('contenido__encriptado__parrafo', mensage);
+      estadoRenderizarElemento('bonton__copiar', 'block');
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+      estadoRenderizarElemento('contenido__encriptado_mensaje', 'none')
+    } else {
       alert("ingrese solo minusculas y sin acentos");
     }
   } else {
-    estadoRenderizarElemento('contenido__encriptado__parrafo','none');
+    estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
     estadoRenderizarElemento('bonton__copiar', 'none');
     estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
-    estadoRenderizarElemento('contenido__encriptado_mensaje','block')
-   // estadoVisibleElemento('bonton__copiar', 'hidden');
+    estadoRenderizarElemento('contenido__encriptado_mensaje', 'block')
+    // estadoVisibleElemento('bonton__copiar', 'hidden');
   }
 }
 function copiar() {
