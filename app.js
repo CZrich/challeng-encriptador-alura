@@ -1,5 +1,6 @@
 let hola = "hola mundo";
 let regex = /^[a-z\s]+$/
+let anchoPantalla;
 
 estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
 estadoRenderizarElemento('bonton__copiar', 'none');
@@ -21,6 +22,7 @@ function setTextToHTML(id, texto) {
   document.getElementById(id).value = texto;
 }
 function encriptarMensaje() {
+  anchoPantalla = window.innerWidth;
   let mensage = optenerInput('inputTexto');
   if (mensage.length) {
     limpiarInput('inputTexto');
@@ -31,6 +33,8 @@ function encriptarMensaje() {
       estadoRenderizarElemento('contenido__encriptado__parrafo', 'block')
 
       setTextToHTML('contenido__encriptado__parrafo', mensage);
+     
+      
       estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
       estadoRenderizarElemento('contenido__encriptado_mensaje', 'none')
       estadoRenderizarElemento('bonton__copiar', 'block');
@@ -41,7 +45,12 @@ function encriptarMensaje() {
   } else {
     estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
     estadoRenderizarElemento('bonton__copiar', 'none');
-    estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    if(anchoPantalla<1200){
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+    }else{
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    }
+   
     estadoRenderizarElemento('contenido__encriptado_mensaje', 'block')
 
   }
@@ -50,13 +59,14 @@ function encriptarMensaje() {
 }
 
 function desencriptarMensaje() {
+  anchoPantalla = window.innerWidth;
   let mensage = optenerInput('inputTexto');
   if (mensage.length) {
 
     limpiarInput('inputTexto');
     if (regex.test(mensage)) {
       mensage = desencriptar(mensage);
-      // estadoRenderizarElemento('contenido__encriptado_parrafo', 'block')
+     
       estadoRenderizarElemento('contenido__encriptado__parrafo', 'block')
       setTextToHTML('contenido__encriptado__parrafo', mensage);
       estadoRenderizarElemento('bonton__copiar', 'block');
@@ -68,9 +78,14 @@ function desencriptarMensaje() {
   } else {
     estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
     estadoRenderizarElemento('bonton__copiar', 'none');
-    estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    if(anchoPantalla<1200){
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
+    }else{
+      estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
+    }
+   
     estadoRenderizarElemento('contenido__encriptado_mensaje', 'block')
-    // estadoVisibleElemento('bonton__copiar', 'hidden');
+    
   }
 }
 function copiar() {
@@ -125,28 +140,49 @@ function encritador(inputmgs) {
 function desencriptar(msg) {
 
   let mensage = msg.split('');
+  //let i = 0; i < mensage.length; i++
+  i=0;
 
-  for (let i = 0; i < mensage.length; i++) {
+  while(i<mensage.length) {
 
     switch (mensage[i]) {
       case "e"://enter
-        //mensage[i]="e";
-        mensage.splice(i + 1, 4);
+        console.log(mensage.slice(i,i+5).join(''))
+        if(mensage.slice(i,i+5).join('')==="enter"){
+
+            mensage.splice(i + 1, 4);
+        }
+      
         break;
       case "i"://imes
-        mensage.splice(i + 1, 3);
+        console.log( mensage.slice(i,i+4).join(''))
+        if(mensage.slice(i,i+4).join('')==="imes"){
+            mensage.splice(i + 1, 3);
+        }
+       
         break;
       case "a"://ai
-        mensage.splice(i + 1, 1);
+        console.log(mensage.slice(i,i+2).join(''))
+        if(mensage.slice(i,i+2).join('')==="ai"){
+           mensage.splice(i + 1, 1);
+        }
+        
         break;
       case "o"://ober
-        //mensage[i]="o";
-        mensage.splice(i + 1, 3);
+       console.log(mensage.slice(i,i+4).join(''))
+        if(mensage.slice(i,i+4).join('')==="ober"){
+           mensage.splice(i + 1, 3);
+        }
+       
         break;
       case "u"://ufat
-        mensage.splice(i + 1, 3);
+        if(mensage.slice(i,i+4).join('')==="ufat"){
+           mensage.splice(i + 1, 3);
+        }
+       
         break;
     }
+    i++;
   }
 
   return mensage.join('');
