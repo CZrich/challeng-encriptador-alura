@@ -10,25 +10,23 @@
         <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
         <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-        
+     
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <header class="header__barra">
         <!-- <img src="assets/letter-a_10077857.png" alt="logo alura" >-->
-        <img src="assets/icons8-enviar-correo-electrónico-masivo-64.png" alt="escudo">
+        <img src="assets/icons/mensaje.png" alt="escudo">
          <h1 >  ENCRIPTADOR</h1> 
         </header>
         <main class="contenido">
         <section class="contenido__input">
 
-            <textarea placeholder="Ingrese texto aqui" name="inputTexto" id="inputTexto"></textarea>
+            <textarea placeholder="Ingrese texto aqui..." name="inputTexto" id="inputTexto"></textarea>
             <div id="contenido__input__recomendacion">
-                <p >
-                    <img src="assets/Group.jpg " alt="simbolo" class="contenido__img_recomendacion">
-                    Solo letras minúsculas y sin acentos
-                </p>
+                <img src="assets/Group.jpg " alt="simbolo" class="contenido__img_recomendacion">
+                <p> Solo letras minúsculas y sin acentos </p>
 
             </div>
 
@@ -52,7 +50,7 @@
           
             <textarea id="contenido__encriptado__parrafo" readonly="true"></textarea>
 
-            <img id="contenido__encriptado__imagen" src="assets/Muñeco.jpg" alt="no hay texto">
+            <img id="contenido__encriptado__imagen" src="assets/message_9449230.png" alt="no hay texto">
             <article id="contenido__encriptado_mensaje">
                 <h2 class="contenido__no_mensaje">Ningun mensaje fue encontrado</h2>
                 <p class="contenido__ayuda">Ingresa el texto que desees encriptar o desencriptar.</p>
@@ -75,13 +73,13 @@
             <div class="enlace__footer">
                 <h4>Encuentra el codigo:</h4>
                 <a href="https://github.com/CZrich/challeng-encriptador-alura" target="_blank"
-                    class="footer__enlace"><img src="assets/icons8-github-60.png" alt="github" class="footer__icono">
+                    class="footer__enlace"><img src="assets/icons/icons8-github-60.png" alt="github" class="footer__icono">
                     GitHub</a>
             </div>
             <div class="enlace__footer">
                 <h4>Sigueme en:</h4>
                 <a href="https://www.linkedin.com/in/richard-alberto-condo-zamata-baa893294/" target="_blank"
-                    class="footer__enlace"><img src="assets/icons8-linkedin-64.png" alt="linkedin"
+                    class="footer__enlace"><img src="assets/icons/icons8-linkedin-64.png" alt="linkedin"
                         class="footer__icono">Linkedin</a>
             </div>
 
@@ -92,6 +90,8 @@
          </footer>
 
 
+    
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <script src="app.js"></script>
     </body>
 

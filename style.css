@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
 :root {
-    --color-primario: #001845;
+    --color-primario:white;
     --color-secundario: #0466C8;
     --color-terciario: #FFFFFF;
     --color-cuaternario: #D8DFE8;
@@ -21,19 +21,24 @@
     padding: 0px;
 }
 
-.body {
-    /*background-color: var(--color-secundario);*/
+body {
+ 
     box-sizing: border-box;
-    background-color: green;
-
+    background-color: black;
+   
+   background-image: url('assets/fondo03.jpeg');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   
+  
 }
 
 .header__barra {
     display: flex;
-    background-color: var(--color-primario);
+    background-color: black;
     align-items: center;
     justify-content: center;
-    color: var(--color-terciario);
    
 
 }
@@ -47,7 +52,7 @@
     font-size: 2rem;
     font-weight: 600;
     font-size: normal;
-
+    color:white;
     place-items: center;
 
 }
@@ -55,8 +60,8 @@
 .contenido {
     display: flex;
     justify-content: center;
-    background-color: var(--color-terciario);
-    margin: 2% 0 3% 0;
+    
+
 
 }
 
@@ -64,7 +69,7 @@
     display: flex;
     flex-direction: column;
     margin:2%;
-    width: 688px;
+    background-color: transparent;
     height: 840px;
     
 
@@ -75,7 +80,7 @@
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 12px;
-    font-family: var(--fuente-concert);
+    font-family: var(--fuente-playwrite);
 
 }
 
@@ -84,7 +89,7 @@
     color: #495057;
     font-weight: bold;
     text-align: center;
-    font-family: var(--fuente-concert);
+    font-family: var(--fuente-playwrite);
 }
 
 /*
@@ -92,24 +97,23 @@
 */
 .contenido__input__botones {
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-between;
+     width: 688px;
     align-items: center;
-    margin: 5%;
+    margin: 2rem;
 
 
 }
 
 .contenido__boton__encriptar {
     background-color: var(--color-secundario);
-    border-radius: 24px;
-    padding: 16px;
+    border-radius: 1.5rem;
+    padding: 1rem;
     width: 328px;
     margin: 2%;
     color: var(--color-terciario);
     font-size: 1.5rem;
     border: 0;
-    font-weight: 400;
     font-family: var(--fuente-playwrite);
     font-weight: 800;
 
@@ -121,12 +125,11 @@
 
 .contenido__boton__desencriptar {
     background-color: var(--color-secundario);
-    border-radius: 24px;
+    border-radius: 1.5rem;
     width: 328px;
-    padding: 16px;
+    padding: 1rem;
     font-size: 1.5rem;
     border: 0;
-    font-weight: 400;
     font-family: var(--fuente-playwrite);
     text-align: center;
     place-items: center;
@@ -147,10 +150,10 @@
 */
 #inputTexto {
 
-    height: 680px;
-    background-color: #E9ECF8;
+    height: 100%;
+    background-color:transparent;
     resize: none;
-    color: #0A3871;
+    color:var(--color-primario);
     border: none;
     font-size: 2rem;
     border-radius: 10px;
@@ -162,6 +165,21 @@
     font-weight: 400;
     font-family: var(--fuente-playwrite);
 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+     
+  /* Reflexión */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -o-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  
+  /* Transparencia */
+  opacity: 0.8;
 }
 
 #contenido__encriptado__parrafo {
@@ -169,23 +187,23 @@
     outline: none;
     border: 0;
     width: 336px;
-    height: 681px;
-    margin: 30px;
+    height: 670px;
+    margin: 2rem;
     resize: none;
-    color: var(--color-secundario);
-    background-color: var(--color-terciario);
+    color: var(--color-primario);
+    background-color: transparent;
     font-family: var(--fuente-playwrite);
-
+ 
 }
 
 #bonton__copiar {
     background-color: var(--color-secundario);
-    border-radius: 24px;
+    border-radius: 1.5rem;
     width: 328px;
-    padding: 16px;
+    padding: 1rem;
     border: 0;
     font-size: 1.5rem;
-    margin: 5%;
+    margin: 2rem;
     font-family: var(--fuente-playwrite);
     color: var(--color-terciario);
     font-weight: 800;
@@ -196,13 +214,14 @@
 }
 
 #inputTexto::placeholder {
-    color: #0A3871;
+    color: #4776b1;
 }
 
 #contenido__input__recomendacion {
+    margin-left: 4%;
     display: flex;
     font-size: 0.75rem;
-    color: #495057;
+    color: #d41610;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -219,22 +238,38 @@
 
 .contenido__encriptado {
     width: 400px;
-    height: 860px;
-    background-color: var(--color-terciario);
+    height: 820px;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: var(--color-primario) 0px 5px 15px;
-    border-radius: 32px;
+    border-radius: 2rem;
     margin: 2%;
-
+       /* Efecto de vidrio */
+       backdrop-filter: blur(10px);
+       -webkit-backdrop-filter: blur(10px);
+       -moz-backdrop-filter: blur(10px);
+       -ms-backdrop-filter: blur(10px);
+       -o-backdrop-filter: blur(10px);
+       
+       /* Reflexión */
+       box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       -ms-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       -o-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       
+       /* Transparencia */
+       opacity: 0.8;
+     
 }
 
 #contenido__encriptado_mensaje {
     gap: 8px;
     width: 336px;
-    background-color: var(--color-terciario);
+   
     margin: 5%;
 }
 
@@ -249,10 +284,24 @@
 .contenido__footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-primario);
+    background-color: transparent;
     gap: 1%;
     justify-content: center;
-
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+     
+  /* Reflexión */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -o-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  
+  /* Transparencia */
+  opacity: 0.8;
 }
 
 .contenido__footer h3 {
@@ -335,7 +384,7 @@
 
     .contenido__encriptado {
         width: auto;
-        height: fit-content;
+        height: auto;
 
     }
 
@@ -343,9 +392,11 @@
         width: auto;
         height: 75%;
     }
-  
+    .contenido__input__botones{
+        width: auto;
+    }
     #contenido__encriptado__parrafo {
-        width: 100%;
+        width: 90%;
         height: 50%;
     }
     
@@ -357,7 +408,7 @@
         
     }
     #bonton__copiar{
-        width: 80%;
+        width: 90%;
     }
     .enlace__footer{
         width: 25%;
@@ -383,6 +434,17 @@
       
         height: 480px;
         
+    }
+
+    #bonton__copiar{
+        padding: 0.5rem;
+        width: 328px;
+    }
+    .contenido__boton__encriptar{
+        padding: 0.5rem;
+    }
+    .contenido__boton__desencriptar{
+        padding: 0.5rem;
     }
    /* #contenido__encriptado__parrafo{
         width: 100%;
