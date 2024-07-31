@@ -1,5 +1,3 @@
-
-let hola = "hola mundo";
 let regex = /^[a-z\s]+$/
 let anchoPantalla;
 
@@ -47,24 +45,23 @@ function encriptarMensaje() {
           timer: 2000,
           backdrop: true,
           background: '#FFFFFF',
-         // background:'#28a745',
+      
           toast:true,
           timerProgressBar: true
         })
 
       } catch (e) {
         Swal.fire({
-          // position: "center",
+          
           icon: "error",
           color: "red",
           title: "Opps hubo un error...",
-        //    html: '<span style="color: #E95C53;">Ingrese solo minúsculas y sin acento</span>',
+      
           showConfirmButton: false,
           timer: 2000,
           backdrop: true,
           background: '#FFFFFF',
-          // background:'#211312',
-          // toast:true,
+         
           timerProgressBar: true
         })
       }
@@ -72,20 +69,19 @@ function encriptarMensaje() {
 
 
 
-      //estadoVisibleElemento('bonton__copiar', 'visible');
+      
     } else {
       Swal.fire({
-        // position: "center",
+        
         icon: "error",
-        color: "red",
+        color: "#33302f",
         title: "Opps...",
-        html: '<span style="color: #E95C53;">Ingrese solo minúsculas y sin acento</span>',
+        html: '<span style="color: #e62525;">Ingrese solo minúsculas y sin acentos ni caracteres especiales</span>',
         showConfirmButton: false,
         timer: 2000,
         backdrop: true,
         background: '#FFFFFF',
-        // background:'#211312',
-        // toast:true,
+       
         timerProgressBar: true
       })
     }
@@ -130,7 +126,7 @@ function desencriptarMensaje() {
         })
       } catch (e) {
         Swal.fire({
-          // position: "center",
+         
           icon: "error",
           color: "red",
           title: "Opps hubo un error...",
@@ -139,8 +135,7 @@ function desencriptarMensaje() {
           timer: 2000,
           backdrop: true,
           background: '#FFFFFF',
-          // background:'#211312',
-          // toast:true,
+        
           timerProgressBar: true
         })
       }
@@ -152,12 +147,25 @@ function desencriptarMensaje() {
       estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
       estadoRenderizarElemento('contenido__encriptado_mensaje', 'none')
     } else {
-      alert("ingrese solo minusculas y sin acentos");
+      Swal.fire({
+      
+        icon: "error",
+        color: "#33302f",
+        title: "Opps...",
+        html: '<span style="color: #e62525;">Ingrese solo minúsculas y sin acento</span>',
+        showConfirmButton: false,
+        timer: 2000,
+        backdrop: true,
+        background: '#FFFFFF',
+       
+        timerProgressBar: true
+      })
     }
   } else {
     estadoRenderizarElemento('contenido__encriptado__parrafo', 'none');
     estadoRenderizarElemento('bonton__copiar', 'none');
     if (anchoPantalla < 1200) {
+      //no reenderiza la imagen cuando el ancho de la pantall es menor de 1200px
       estadoRenderizarElemento('contenido__encriptado__imagen', 'none');
     } else {
       estadoRenderizarElemento('contenido__encriptado__imagen', 'block');
@@ -178,7 +186,7 @@ function copiar() {
 
     // Mostrar alerta de éxito usando SweetAlert2
     Swal.fire({
-      position: "top-end",
+      position: "bottom-end",
       color: 'green',
       icon: "success",
       title: "Copiado",
@@ -197,7 +205,7 @@ function copiar() {
 
     // Mostrar alerta de error
     Swal.fire({
-      position: "top-end",
+      position: "bottom-end",
       icon: "error",
       title: "Error al copiar",
       text: error,
@@ -248,14 +256,14 @@ function encritador(inputmgs) {
 function desencriptar(msg) {
 
   let mensage = msg.split('');
-  //let i = 0; i < mensage.length; i++
+ 
   i = 0;
 
   while (i < mensage.length) {
 
     switch (mensage[i]) {
       case "e"://enter
-        console.log(mensage.slice(i, i + 5).join(''))
+       //  console.log(mensage.slice(i, i + 5).join(''))
         if (mensage.slice(i, i + 5).join('') === "enter") {
 
           mensage.splice(i + 1, 4);
@@ -263,21 +271,21 @@ function desencriptar(msg) {
 
         break;
       case "i"://imes
-        console.log(mensage.slice(i, i + 4).join(''))
+        //console.log(mensage.slice(i, i + 4).join(''))
         if (mensage.slice(i, i + 4).join('') === "imes") {
           mensage.splice(i + 1, 3);
         }
 
         break;
       case "a"://ai
-        console.log(mensage.slice(i, i + 2).join(''))
+       // console.log(mensage.slice(i, i + 2).join(''))
         if (mensage.slice(i, i + 2).join('') === "ai") {
           mensage.splice(i + 1, 1);
         }
 
         break;
       case "o"://ober
-        console.log(mensage.slice(i, i + 4).join(''))
+       // console.log(mensage.slice(i, i + 4).join(''))
         if (mensage.slice(i, i + 4).join('') === "ober") {
           mensage.splice(i + 1, 3);
         }
