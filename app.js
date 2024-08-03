@@ -40,7 +40,7 @@ function encriptarMensaje() {
          position: "bottom-end",
           icon: "success",
           color: "green",
-          title: "Enciptado...",
+          title: "Encriptado...",
           showConfirmButton: false,
           timer: 2000,
           backdrop: true,
